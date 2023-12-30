@@ -1,0 +1,88 @@
+#header{
+    padding: 1%;
+    background:linear-gradient(30deg, #339fcd 0%, #339fcd 60%, #3ea5ce 60%, #3ea5ce 100%); 
+}
+#headerTitle{
+    color: aliceblue;
+    width: 180px;
+}
+
+#headerTitle {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 1s;
+}
+#headerTitle:after, #headerTitle:before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0px solid #fff;
+    transition: all 1s;
+}
+#headerTitle:after {
+    top: -1px;
+    left: -1px;
+    border-top: 5px solid rgb(142, 221, 250);
+    border-left: 5px solid rgb(119, 185, 210);
+}
+#headerTitle:before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 5px solid  rgb(142, 221, 250);
+    border-right: 5px solid rgb(119, 185, 210);
+}
+#headerTitle:hover {
+    color: #00445f;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+#headerTitle:hover:before, #headerTitle:hover:after {
+    width: 105%;
+    height: 100%;
+}
+ 
+
+/* profile */
+
+#headerNavDrop{
+    position: absolute;
+    right: 0;
+    top:-50px;
+    color: white;
+    transition: all 1s;
+}
+#headerNavDrop:hover{
+    font-weight: 600;
+    color: #00445f;
+    
+}
+
+.dropItem{
+    cursor:default;
+}
+
+.dropItemname{
+    color: #009ad7;
+    font-weight: 500;
+    margin: 0;
+}
+
+.dropItemValue{
+    padding: 1px 8px;
+}
+
+.sign{
+    transition: all 1s;
+    margin: 5px;
+}
+
+.sign:hover{
+    text-shadow: rgb(255, 0, 25) 1px 0 100px;
+    font-weight: 600;
+    color: red;
+}
+
