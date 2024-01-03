@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Collapse from 'react-bootstrap/Collapse';
 import { AppContext} from "../context/provider";
 import './Footer.css';
+import { Link } from "react-router-dom";
 
 
 function Footer(){
@@ -59,6 +60,7 @@ function Footer(){
                                 className="footerContent" 
                                 id={commands[4]}>
                                     {commands[3]}
+                                    <a target="_blank" href='/aboutus' >knowMore...</a>
                             </div>
                         </Collapse>
             </Row>

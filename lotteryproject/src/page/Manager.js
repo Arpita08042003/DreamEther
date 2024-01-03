@@ -7,6 +7,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './Manager.css'
 import Modal from 'react-bootstrap/Modal'; 
+import { Link } from "react-router-dom";
+ 
 
 function Manager(){
     
@@ -20,7 +22,7 @@ function Manager(){
     const [showDetails, setShowDetails] = useState(false);
     const [showListOfPlayer, setShowListOfPlayer] = useState(false);    
     const [showError, setShowError] = useState(false);
-    const errors = "Error"
+     
 
     // Start Function
         async function  start(){
@@ -188,12 +190,13 @@ function Manager(){
     // handle error dailog
         function handleErrorClose () { setShowError(false)};
         function handleErrorShow () { setShowError(true)};
-        function errorModal(error){
-        return( <Modal show={showError} onHide={()=>handleErrorClose()} animation={false}>
+        function errorModal (){
+        return( 
+            <Modal show={showError} onHide={()=>handleErrorClose()} animation={false}>
                 <Modal.Header closeButton>
                 <Modal.Title>Error</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>{error}</Modal.Body>
+                <Modal.Body><h6>Opps!! Somethings is wrong</h6><a target="_blank" href='/error' >checkHere...</a></Modal.Body>
                 <Modal.Footer>
                     <button className="userButton" variant="secondary" onClick={()=>handleErrorClose()}>
                         <a className="userButtonA">Ohkay!!! Close</a>
@@ -238,7 +241,7 @@ function Manager(){
                     </Row>
                 </Container> 
                 {startModal()}
-                {errorModal(errors)}
+                {errorModal()}
                 {endModal()}
                 {detailsModal()}
                 {ListOfPlayerModal()};                

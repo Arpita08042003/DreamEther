@@ -7,7 +7,9 @@ import Buyer from './page/Buyer';
 import Manager from './page/Manager'
 import Rooms from './page/Rooms';
 import User from './page/User';
+import Errors from './page/Errors';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
+import About from './page/About';
 
 
 function App() {
@@ -31,13 +33,16 @@ function App() {
     }
   })
   useEffect(()=>{
-    navigate('/', { replace: true });
+   if(window.location.href !='http://localhost:3000/error' && window.location.href !='http://localhost:3000/aboutus'  ){
+    navigate('/', { replace: true });}
   },[connected==0])
 
 
   return(
   
     <Routes>
+        <Route path="/aboutus" element={<About/>}/>
+        <Route path='/error' element={<Errors/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/user" element={<User/>}/>
         <Route path="/user/manager" element={<Manager/>}/>

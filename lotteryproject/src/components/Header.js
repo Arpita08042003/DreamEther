@@ -6,12 +6,12 @@ import './Header.css'
 import { AppContext } from '../context/provider';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { provider } from '../utils/daicontract';
-import { ethers } from 'ethers';
+import { ethers } from 'ethers'; 
 
 function Header(){
     const {connected,selectedAddress,setConnected} =useContext(AppContext);
     const [balance,setBalance] = useState(-1);
-
+     
     async function setbalance(){
         var Balance = await provider.getBalance(selectedAddress);
         Balance = ethers.utils.formatEther(Balance);
@@ -45,7 +45,7 @@ function Header(){
         <div id="header">
             <Nav>
                 <Container id="headerContainer">
-                    <Navbar.Brand><h3 id='headerTitle'>DreamEther</h3></Navbar.Brand>
+                    <Navbar.Brand><h3 id='headerTitle' >DreamEther</h3></Navbar.Brand>
                     {SignIn()}
                 </Container>
             </Nav>

@@ -1,4 +1,5 @@
 import React from "react";
+import './About.css'
 
 function About(){
 
@@ -13,7 +14,7 @@ function About(){
         ],
         [
             "How It Works",
-            "Hosting Lotteries </br> Anyone can start their own lottery room on DreamEther. Each user is allowed to initiate one lottery at a time, ensuring a fair and equal opportunity for all. Our smart contract technology ensures that the lottery process is transparent and tamper-proof.</br>Participating in Lotteries </br> Feel the thrill of the game by participating in active lottery rooms hosted by others. With multiple lotteries happening simultaneously, you can explore various opportunities to try your luck and win exciting prizes."
+            <p><br/><h6>Hosting Lotteries</h6>Anyone can start their own lottery room on DreamEther. Each user is allowed to initiate one lottery at a time, ensuring a fair and equal opportunity for all. Our smart contract technology ensures that the lottery process is transparent and tamper-proof.<br/><br/><h6>Participating in Lotteries</h6> Feel the thrill of the game by participating in active lottery rooms hosted by others. With multiple lotteries happening simultaneously, you can explore various opportunities to try your luck and win exciting prizes.</p>
         ],
         [
             "Security and Transparency",
@@ -25,15 +26,27 @@ function About(){
         ],
         [
             "Contact Us",
-            "Have questions or need assistance? Don't hesitate to reach out to our support team at [.......@com]. We're here to help!</br></br> Thank you for choosing DreamEther for your decentralized lottery experience. Let the games begin, and may the odds be ever in your favor!</br></br> DreamEther Team"
+            <p>Have questions or need assistance? Don't hesitate to reach out to our support team at [.......@com]. We're here to help!<br/><br/> Thank you for choosing DreamEther for your decentralized lottery experience. Let the games begin, and may the odds be ever in your favor!<br/><br/> DreamEther Team !!</p>
         ]
     ]
 
 
     return(
         <>
-            <div>
-                
+            <div className="screenContainer">
+
+            <div class="badge">
+                <div class="text">’Hallo!</div>
+            </div>
+
+
+                {about.map((element,index)=>{
+                    return(<>
+                        <div className="dropItem">
+                        <h4 className="dropItemname">{element[0]}</h4>
+                        <p className="dropItemValue">{element[1]}</p>
+                        </div></>)
+                })}                
             </div>
         </>
     );
